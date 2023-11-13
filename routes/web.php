@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\CompanyController as ApiCompanyController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
@@ -23,6 +24,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('lang/{lang}',function($lang){
+    if ($lang == 'en' || $lang == 'ar') {
+       session()->put('lang',$lang);
+    //    /* app()->setLocale('ar');
+    //    app()->getLocale();
+    //    App::setLocale('ar');
+    //    App::getLocale();
+       return back();
+    }else{
+        abort(500);
+    }
+})->name('lang');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -57,6 +72,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('employees', EmployeeController::class)->except('show');
 
     Route::resource('managers',ManagerController::class)->except('show');
+
+    
 });
 
 require __DIR__ . '/auth.php';

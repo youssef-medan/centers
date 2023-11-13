@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            Branches
+            {{ __('app.Branches') }}
         </h2>
     </x-slot>
     {{-- {{ auth()->id() }} --}}
@@ -48,7 +48,7 @@
             <div class="p-6 text-gray-900">
                 <div class="flex justify-end">
                     <x-primary-button class="bg-red-800">
-                        <a href="{{ route('branches.create') }}">Add New Branch</a>
+                        <a href="{{ route('branches.create') }}">{{ __('app.Add New branch') }}</a>
                     </x-primary-button>
                 </div>
                 <!-- component -->

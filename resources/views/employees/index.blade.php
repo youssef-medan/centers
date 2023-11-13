@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            Employee
+            {{ __('app.Employees') }}
         </h2>
     </x-slot>
 
@@ -45,7 +45,7 @@
             <div class="p-6 text-gray-900">
                 <div class="flex justify-end">
                     <x-primary-button class="bg-red-800">
-                        <a href="{{ route('employees.create') }}">Add New employee</a>
+                        <a href="{{ route('employees.create') }}">{{ __('app.Add New employee') }}</a>
                     </x-primary-button>
                 </div>
                 <!-- component -->
