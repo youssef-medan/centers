@@ -13,32 +13,32 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('app.Dashboard') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('companies.index')" :active="request()->routeIs('companies.index')">
-                        Companies
+                        {{ __('app.Companies') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('branches.index')" :active="request()->routeIs('branches.index')">
-                        Branches
+                        {{ __('app.Branches') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('vendors.index')" :active="request()->routeIs('vendors.index')">
-                        Vendors
+                        {{ __('app.Vendors') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('employees.index')" :active="request()->routeIs('employees.index')">
-                        Employees
+                        {{ __('app.Employees') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('managers.index')" :active="request()->routeIs('managers.index')">
-                        Managers
+                        {{ __('app.Managers') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -66,6 +66,10 @@
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
+                        <x-dropdown-link :href="route('lang',__('app.k_lang'))">
+                            {{ __('app.s_lang') }}
+                        </x-dropdown-link>
+                        <hr>
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
