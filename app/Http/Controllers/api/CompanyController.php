@@ -3,12 +3,17 @@
 namespace App\Http\Controllers\api;
 use Exception;
 use App\Http\Controllers\Controller;
+<<<<<<< HEAD
 use App\Http\Resources\CompanyResource;
 use App\Http\Resources\CompanyCollection;
 
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+=======
+use App\Models\Company;
+use Illuminate\Http\Request;
+>>>>>>> 9edfb186fe10dc1daff9486724fdce895556f593
 
 class CompanyController extends Controller
 {
@@ -29,7 +34,11 @@ class CompanyController extends Controller
         // echo "test";
         try {
             $companies = Company::query();
+<<<<<<< HEAD
             if ($request->name) $companies->where('name', 'like', '%' . $request->name . '%');
+=======
+            if ($request->name) $companies->where('namew', 'like', '%' . $request->name . '%');
+>>>>>>> 9edfb186fe10dc1daff9486724fdce895556f593
             $result = $companies->get();
             return $result;
         } catch (Exception $e) {
@@ -41,6 +50,7 @@ class CompanyController extends Controller
     }
     public function index()
     {
+<<<<<<< HEAD
         // $company = DB::table('companies')
         // ->select('*','companies.name as company_name','companies.owner as company_owner','companies.created_at as company_created_at','managers.name as manager_name')
         // ->leftJoin('managers','managers.company_id','=','companies.id');
@@ -50,6 +60,10 @@ class CompanyController extends Controller
         ->join('managers','managers.company_id','=','companies.id')->paginate(20);
 
         return new CompanyCollection($company);
+=======
+        $company = Company::all();
+        return $company;
+>>>>>>> 9edfb186fe10dc1daff9486724fdce895556f593
 
     }
 
